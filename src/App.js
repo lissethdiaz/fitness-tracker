@@ -8,8 +8,12 @@ import Login from './pages/Login';
 
 
 function App() {
-  function App() {
     const [isLoggedIn,setIsLoggedIn] = useState(false)
+    const api = async () => {
+      const response =  await fetch('./api/....')
+      const data = await response.json()
+      console.log(data);
+    } 
   
     const toggleLogin = () => {
       setIsLoggedIn(prevState => prevState === true ? false : true)
@@ -21,16 +25,19 @@ function App() {
         <div className='container'>
           {/* App routing switch goes here :) */}
           <Switch>
-            <Route exact path='/'>
+            <Route path='/'>
               <Login isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} />
+                <Route path=':signup'>
+                  {isLoggedIn ? <Signup /> : <Redirect to=':signup' />}
+                </Route>
             </Route>
-            <Route exact path='/home'>
+            <Route path='/home'>
               {isLoggedIn ? <Home /> : <Redirect to='/' />}
             </Route>
-            <Route exact path='/history'>
+            <Route  path='/history'>
               {isLoggedIn ? <History /> : <Redirect to='/' />}
             </Route>
-            <Route exact path='/goals'>
+            <Route  path='/goals'>
               {isLoggedIn?<Goals /> : <Redirect to='/'/>}
             </Route> 
           </Switch>

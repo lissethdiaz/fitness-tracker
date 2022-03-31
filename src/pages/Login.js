@@ -1,5 +1,5 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Outlet} from 'react-router-dom'
 import NavTabs from '../components/NavTabs'
 import Signup from './Signup'
 
@@ -40,7 +40,7 @@ function Login({isLoggedIn,toggleLogin}) {
             <button type='button' className='btn' onClick={signUp}>
                 No account? Create one!
             </button>
-        
+        <Outlet></Outlet>
       </main>
     </div>
   )

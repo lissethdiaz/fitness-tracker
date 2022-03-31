@@ -3,18 +3,18 @@ import { signUP } from './Login'
 export default function Form() {
 
 // States for registration
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
 
 // States for checking the errors
-    const [submitted, setSubmitted] = useState(false);
-    const [error, setError] = useState(false);
+const [submitted, setSubmitted] = useState(false);
+const [error, setError] = useState(false);
 
     // Handling the name change
-    const handleName = (e) => {
-        setName(e.target.value);
-        setSubmitted(false);
+const handleName = (e) => {
+    setName(e.target.value);
+    setSubmitted(false);
 };
 
 // Handling the email change
