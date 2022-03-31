@@ -36,11 +36,11 @@ function Login({isLoggedIn,toggleLogin}) {
             <button type="button" className="btn" onClick={handleClick}>
               Log In
             </button>
-            :
+            }
             <button type='button' className='btn' onClick={signUp}>
                 No account? Create one!
             </button>
-        }
+        
       </main>
     </div>
   )
