@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { signUP } from './Login'
 export default function Form() {
 
 // States for registration
@@ -41,7 +40,7 @@ const handleSubmit = (e) => {
 };
 
 //signup
-const signUP = 
+//const signUP = 
 
 // Showing success message
 const successMessage = () => {

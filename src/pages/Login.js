@@ -1,25 +1,21 @@
 import React from 'react'
-import {useHistory, Outlet} from 'react-router-dom'
+import ReactDOM from 'react-domgi'
+import {useNavigate, Outlet} from 'react-router-dom'
 import NavTabs from '../components/NavTabs'
 import Signup from './Signup'
 
 
-function Login({isLoggedIn,toggleLogin}) {
-  const history = useHistory()
+function LoginPage({isLoggedIn,toggleLogin}) {
+  const navigate = useNavigate()
   
   function handleClick() {
     toggleLogin()
     if (!isLoggedIn) {
-      history.push('/');
+      navigate.push('/signup');
     }
   }
 
-  function signUp() {
-      toggleLogin()
-      if (!isLoggedIn) {
-          {Signup}
-      }
-  }
+
 
   return (
     <div className='container'>
@@ -37,7 +33,7 @@ function Login({isLoggedIn,toggleLogin}) {
               Log In
             </button>
             }
-            <button type='button' className='btn' onClick={signUp}>
+            <button type='button' className='btn' onClick={Signup}>
                 No account? Create one!
             </button>
         <Outlet></Outlet>
@@ -46,4 +42,4 @@ function Login({isLoggedIn,toggleLogin}) {
   )
 }
 
-export default Login
+export default LoginPage
