@@ -1,11 +1,11 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import NavTabs from '../components/NavTabs'
 import Signup from './Signup'
 
 
 function Login({isLoggedIn,toggleLogin}) {
-  const history = useHistory()
+  const history = useNavigate()
   
   function handleClick() {
     toggleLogin()
@@ -14,12 +14,12 @@ function Login({isLoggedIn,toggleLogin}) {
     }
   }
 
-  function signUp() {
-      toggleLogin()
-      if (!isLoggedIn) {
-          {Signup}
-      }
-  }
+  // function signUp() {
+  //     toggleLogin()
+  //     if (!isLoggedIn) {
+  //         {Signup}
+  //     }
+  // }
 
   return (
     <div className='container'>
@@ -37,9 +37,9 @@ function Login({isLoggedIn,toggleLogin}) {
               Log In
             </button>
             }
-            <button type='button' className='btn' onClick={signUp}>
+            {/* <button type='button' className='btn' onClick={signUp}>
                 No account? Create one!
-            </button>
+            </button> */}
         
       </main>
     </div>
