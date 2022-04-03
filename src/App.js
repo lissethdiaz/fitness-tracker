@@ -1,43 +1,27 @@
-import React, {useState} from 'react';
-import {Switch,Route, Redirect} from 'react-router-dom';
+import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import NavTabs from './components/NavTabs';
-import Goals from './pages/Goals';
-import History from './pages/History';
-import Login from './pages/Login';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Login from '../src/components/Login';
+import SignUp from '../src/components/Signup';
 
 function App() {
-  function App() {
-    const [isLoggedIn,setIsLoggedIn] = useState(false)
-  
-    const toggleLogin = () => {
-      setIsLoggedIn(prevState => prevState === true ? false : true)
-    }
 
-    return (
-      <div className="App">
-        <NavTabs isLoggedIn={isLoggedIn} />
-        <div className='container'>
-          {/* App routing switch goes here :) */}
+  return (
+    <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <div className="container">
           <Switch>
-            <Route exact path='/'>
-              <Login isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} />
-            </Route>
-            <Route exact path='/home'>
-              {isLoggedIn ? <Home /> : <Redirect to='/' />}
-            </Route>
-            <Route exact path='/history'>
-              {isLoggedIn ? <History /> : <Redirect to='/' />}
-            </Route>
-            <Route exact path='/goals'>
-              {isLoggedIn?<Goals /> : <Redirect to='/'/>}
-            </Route> 
+            <Route exact path='/' component={Login} />
+            <Route path="/sign-in" component={Login} />
+            <Route path="/sign-up" component={SignUp} />
           </Switch>
-        </div>
-        <Footer />
+          </div>
+        
       </div>
+    </Router>
   );
 }
 
-export default App
+export default App;
