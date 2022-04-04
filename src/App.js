@@ -5,7 +5,7 @@ import NavTabs from './components/NavTabs'
 import Goals from './pages/Goals'
 import History from './pages/History'
 import Login from './components/Login'
-import Home from './pages/Home'
+import Track from './components/Track'
 import Signup from './components/Signup'
 import Footer from './components/Footer'
 import Header from './components/Header';
@@ -19,8 +19,11 @@ import './index.css';
             <Header/>
             <NavTabs/>
             <Routes>
-              <Route path="/" element={Signup} />
-              <Route exact path ="/login">{Login}</Route>
+              <Route path="/"element={<Signup/>} />
+              <Route path ="/login" element = {<Login/>}/>
+              <Route path ="/track" element = {<Track/>}/>
+              <Route path ="/history" element = {<History/>}/>
+              <Route path ="/goals" element = {<Goals/>}/>
             </Routes>
            
                   {/* <Signup/> */}

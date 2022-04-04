@@ -1,8 +1,10 @@
-import React,{useState,useEffect} from 'react'
-//import {useHistory,useParams} from 'react-router-dom'
+import React from "react";
+
+const History = () => {
+  return(<>
+  <h2>History Page</h2>
+  </>)
+}
 
 
-
-
-
-export default History
+export default History;

@@ -4,7 +4,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-       'oldenburg': ['Oldenburg']
+       'oldenburg': ['Oldenburg'],
+       'josefin-sans': ['josefin-sans, sans-serif']
     },
     screens: {
       sm: '480px',
