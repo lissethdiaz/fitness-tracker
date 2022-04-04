@@ -1,37 +1,25 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-function Navigation() {
-  return (
-    <div className="navigation">
-      <nav className="navbar ">
-        <div className="container">
-          <NavLink className="navbar" to="/">
-            Fitness Tracker
-          </NavLink>
-          <div>
-            <ul className="navbar-nav ">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  Track
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/history">
-                  History
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/goals">
-                  Goals
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+export default class NavTabs extends Component {
+
+  render() {
+    return (
+      <nav className="navbar flex flex-row justify-center items-center h-24"> 
+        <div className="collpase navbar-collapse">
+        <ul className="navbar-nav mr-auto flex justify-center items-center space-x-8 font-josefin-sans font-bold">
+          <li className="navbar-item">
+          <Link to="/" className="nav-link">Track</Link>
+          </li>
+          <li className="navbar-item">
+          <Link to="/history" className="nav-link">History</Link>
+          </li>
+          <li className="navbar-item">
+          <Link to="/goals" className="nav-link">Goals</Link>
+          </li>
+        </ul>
         </div>
       </nav>
-    </div>
-  );
+    );
+  }
 }
-
-export default Navigation;

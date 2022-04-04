@@ -4,9 +4,9 @@ import './App.css';
 import NavTabs from './components/NavTabs'
 import Goals from './pages/Goals'
 import History from './pages/History'
-import Login from './pages/Login'
+//import Login from './components/Login'
 import Home from './pages/Home'
-import Signup from './pages/Signup'
+import Signup from './components/Signup'
 import Footer from './components/Footer'
 import Header from './components/Header';
 import './index.css';
@@ -15,13 +15,13 @@ import './index.css';
     function App() {
       return (
           <Router>
-            <div className="flex-column justify-flex-start min-100-vh">
-     
-              <div className="container">
-                  <Login/>
+            <div className='container'>
+            <Header/>
+            <NavTabs/>
+           
+                  <Signup/>
 
-              </div>
-          
+            <Footer/>
             </div>
           </Router>
       );
