@@ -20,7 +20,7 @@ export default function Login() {
 
   return (
     <figure className="h-auto flex bg-gray-100">
-      <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-1">
+      <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primary Border shadow-default py-10 px-1">
         <blockquote className="text-2xl font-medium text-center">
           <p className="text-lg font-semibold font-josefin-sans">Welcome to Fit don't Quit</p>
         </blockquote>
@@ -65,7 +65,7 @@ export default function Login() {
           </form>
           <div className="flex items-center mt-3 justify-center">
             <Link to='/'><button className="justify-center text-blue-500 hover:underline">
-              Need account? Sign up for free!
+              Want an account? Sign up for free!
             </button></Link>
           </div>
         </div>
