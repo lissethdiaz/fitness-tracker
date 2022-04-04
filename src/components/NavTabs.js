@@ -9,7 +9,7 @@ export default class NavTabs extends Component {
         <div className="collpase navbar-collapse">
         <ul className="navbar-nav mr-auto flex justify-center items-center space-x-8 font-josefin-sans font-bold">
           <li className="navbar-item">
-          <Link to="/" className="nav-link">Track</Link>
+          <Link to="/track" className="nav-link">Track</Link>
           </li>
           <li className="navbar-item">
           <Link to="/history" className="nav-link">History</Link>

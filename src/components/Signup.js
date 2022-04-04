@@ -75,7 +75,7 @@ export default class Signup extends Component {
         <h3 className='flex justify-center items-center text-lg font-bold tracking-wide text-center shadow-lg h-16 font-josefin-sans bg-fuchsia-100'>Let's Get Started!</h3>
         <form className='flex flex-col justify-center items-center' onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label className='font-bold'>Username: </label>
+            <label className='font-bold'>enter a username: </label>
             <input  type="text"
                 required
                 className="form-control rounded border-double flex justify-center items-center"
@@ -86,7 +86,7 @@ export default class Signup extends Component {
           </div>
 
           <div className="form-group"> 
-            <label className='font-bold'>Email: </label>
+            <label className='font-bold'>enter your email address: </label>
             <input  type="email"
                 required
                 className="form-control rounded border-double flex justify-center items-center"
@@ -97,7 +97,7 @@ export default class Signup extends Component {
           </div>
 
           <div className="form-group"> 
-            <label className='font-bold'>Password: </label>
+            <label className='font-bold'>enter a unique password: </label>
             <input  type="text"
                 required
                 className="form-control rounded border-double flex justify-center items-center"
