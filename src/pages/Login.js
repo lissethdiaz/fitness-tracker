@@ -1,128 +1,77 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-//import {useNavigate, Outlet} from 'react-router-dom'
-import NavTabs from '../components/NavTabs'
-//import Signup from './Signup'
+import React, { useState } from 'react';
+//import auth from '../utils/auth'
 
-class Login  extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { isLoginOpen: true, isRegisterOpen: false};
-  }
+const Login = (props) => {
+  const [formState, setFormState] = useState({ username: '', password: '' });
+ 
 
-showLoginBox() {
-  this.setState({isLoginOpen: true, isRegisterOpen: false});
-}
-  
-showRegisterBox() {
-  this.setState({isRegisterOpen: true, isLoginOpen: false });
-}
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-render() {
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+//      const { data } = await login({
+//        variables: { ...formState },
+ //     });
+
+//      auth.login(data.login.token);
+//    } catch (e) {
+//      console.error(e);
+//    }
+
+    // clear form values
+    setFormState({
+      username: '',
+      password: '',
+    });
+  };
 
   return (
+    <main className="flex flex-row justify-center mb-4">
+      <div className="columns-12 col-span-6">
+        <div className="card">
+          <h4 className='card-header header text-center p-5 mb-17 text-2xl border-b-2 border-solid'>Login</h4>
+          <div className="card-body">
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="form-input"
+                placeholder="Username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className="btn d-block w-100" type="submit">
+                Submit
+              </button>
+            </form>
 
-    <div className='root-container'>
-      <div className='box-controller'>
-        <div className={'controller' + (this.state.isLoginOpen ? 'selected-controller' : '')}  onClick={this.showLoginBox.bind(this)}>
-          Login
+            <div>Login failed</div>}
+          </div>
         </div>
-        <div className={'controller' + (this.state.isRegisterOpen ? 'selected-controller' : '')}  onClick={this.showRegisterBox.bind(this)}>
-          Register
-        </div>
       </div>
-      <div className='box-container'>
-        {this.state.isLoginOpen && LoginBox}
-        {this.state.isRegisterOpen && RegisterBox}
-      </div>
-    </div> 
+    </main>
   );
-}
-}
+};
 
-class LoginBox extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  submitLogin(e) {
-
-  }
-
-
-render() {
-  return (
-  <div className='inner-container'>
-    <div className='header'>
-      Login
-    </div>
-    <div className='box'>
-
-      <div className='input-group'>
-        <label htmlFor='username'>Username</label>
-        <input type='text' name='username' className='login-input' placeholder='Username'/>
-      </div>
-
-      <div className='input-group'>
-        <label htmlFor='password' >Password</label>
-        <input type='password' name='password' className='login-input' placeholder='Password'/>
-      </div>
-
-      <button type='button' className='login-btn' onClick= {this.submitLogin.bind(this)}>Login</button>
-
-    </div>
-
-  </div>
-  );
-}
-}
-
-class RegisterBox extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  submitRegister(e) {
-
-  }
-
-
-render() {
-  return (
-  <div className='inner-container'>
-    <div className='header'>
-      Register
-    </div>
-
-    <div className='box'>
-
-      <div className='input-group'>
-        <label htmlFor='username'>Username</label>
-        <input type='text' name='username' className='login-input' placeholder='Username'/>
-      </div>
-
-      <div className='input-group'>
-        <label htmlFor='email'>Email</label>
-        <input type='email' name='emaile' className='login-input' placeholder='Email'/>
-      </div>
-
-      <div className='input-group'>
-        <label htmlFor='password' >Password</label>
-        <input type='password' name='password' className='login-input' placeholder='Password'/>
-      </div>
-
-      <button type='button' className='login-btn' onClick= {this.submitRegister.bind(this)}>Sign Up!</button>
-
-    </div>
-
-  </div>
-  );
-}
-}
-
-export default Login
+export default Login;
