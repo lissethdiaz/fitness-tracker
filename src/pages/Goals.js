@@ -1,10 +1,12 @@
 import React from "react";
+import Auth from '../utils/auth';
 
-const Goals = () => {
-  return(<>
-  <h2>Goals Page</h2>
-  </>)
-}
+const Goal = () => {
+  return (
+    <div>
 
+    </div>
+  )
+};
 
-export default Goals;
+export default Goal;

@@ -11,6 +11,8 @@ import Footer from './components/Footer'
 import Header from './components/Header';
 import './index.css';
 
+import Login from '../src/components/Login';
+import SignUp from '../src/components/Signup';
 
     function App() {
       return (
