@@ -30,9 +30,20 @@ import SignUp from '../src/components/Signup';
            
                   {/* <Signup/> */}
 
-            <Footer/>
-            </div>
-          </Router>
-      );
-    };
-export default App
+  return (
+    <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <div className="container">
+          <Switch>
+            <Route exact path='/' component={Login} />
+            <Route path="/sign-in" component={Login} />
+            <Route path="/sign-up" component={SignUp} />
+            </Switch>
+          </div>
+        
+      </div>
+    </Router>
+  );
+}
+
+export default App;
