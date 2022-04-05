@@ -28,4 +28,4 @@ const resistanceSchema = new Schema(
 
 const Resistance = model('Resistance', resistanceSchema);
 
-module.exports = Cardio;
+module.exports = Resistance;
