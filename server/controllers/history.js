@@ -4,8 +4,7 @@ const historyController = {
   // get all Cardios
   getAllCardio(req, res) {
     Cardio.find({})
-      .select("-__v")
-      .sort({ _id: -1 })
+      .sort({ createdAt: "desc" })
       .then((dbCardioData) => res.json(dbCardioData))
       .catch((err) => {
         console.log(err);
@@ -16,7 +15,6 @@ const historyController = {
   // get one Cardio by id
   getCardioById({ params }, res) {
     Cardio.findOne({ _id: params.id })
-      .select("-__v")
       .then((dbCardioData) => res.json(dbCardioData))
       .catch((err) => {
         console.log(err);
@@ -34,8 +32,7 @@ const historyController = {
   // get all Resistance
   getAllResistance(req, res) {
     Resistance.find({})
-      .select("-__v")
-      .sort({ _id: -1 })
+      .sort({ createdAt: "desc" })
       .then((dbResistanceData) => res.json(dbResistanceData))
       .catch((err) => {
         console.log(err);
@@ -46,7 +43,6 @@ const historyController = {
   // get one Resistance by id
   getResistanceById({ params }, res) {
     Cardio.findOne({ _id: params.id })
-      .select("-__v")
       .then((dbResistanceData) => res.json(dbResistanceData))
       .catch((err) => {
         console.log(err);
