@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
 import NavTabs from './components/NavTabs'
 import Goals from './pages/Goals'
-import Home from './pages/Home'
 import History from './pages/History'
 import Track from './components/Track'
 import Login from './components/Login'

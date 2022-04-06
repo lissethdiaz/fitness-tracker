@@ -1,10 +1,18 @@
 import React, {useState} from "react";
+import exerciseItem from "Track.js";
+
+{/*Seperates the array into a list*/}
+const exerciseList = exerciseItem.map((exerciseItem) =>
+<li key={index}>
+  <option value={exerciseItem}>{exerciseItem}</option>
+</li>
+);
 
 export const RModal = () => {
     const [showRModal, setShowRModal] = useState(false);
     return (
       <>
-               <button className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" onClick={() => setShowRModal(true)}>
+        <button className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" onClick={() => setShowRModal(true)}>
           Resistance
         </button>
         {showRModal ? (
@@ -23,6 +31,13 @@ export const RModal = () => {
                 <div className="relative p-6 flex-auto">
                   <form className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 w-full">
                     <label className="block text-black text-sm font-bold mb-1">
+                      Exercise
+                    </label>
+                    {/*Choosing an exercise from the exerciseItem array*/}
+                    <select>
+                      {exerciseList}
+                    </select>
+                    <label className="block text-black text-sm font-bold mb-1">
                       Weight
                     </label>
                     <textarea className="shadow appearance-none border rounded w-full py-2 px-1 text-black" />
@@ -37,6 +52,7 @@ export const RModal = () => {
                   </form>
                 </div>
                 <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                  {/*Make this add the workout to the specific exercises array on submit*/}
                   <button className="text-white bg-yellow-500 active:bg-yellow-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="submit" onClick={() => setShowRModal(false)}>
                     Add Workout
                   </button>
@@ -49,3 +65,4 @@ export const RModal = () => {
       </>
     );
   };
+  //export the exerciseItem array with the newly added workout
