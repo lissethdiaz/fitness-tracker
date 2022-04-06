@@ -4,6 +4,7 @@ const Modal = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
+    <div className="h-screen flex justify-center items-center bg-slate-200">
       <button
         className="bg-blue-200 text-black active:bg-blue-500 
       font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
@@ -12,6 +13,7 @@ const Modal = () => {
       >
         Set a Goal!
       </button>
+    </div>
       {showModal ? (
         <>
           <div className="flex  justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
