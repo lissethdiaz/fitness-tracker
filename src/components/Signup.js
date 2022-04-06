@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-
+import {authenticationService } from '../services/authentication.service';
 import axios from 'axios';
 import Login from './Login';
 import { Link } from 'react-router-dom';
+import {render} from 'react-dom'
 
-export default class Signup extends Component {
+export  class Signup extends React.Component {
     constructor(props) {
         super(props);
 
+        if(authenticationService.currentUserValue) {
+            this.props.history.push('/');
+        }
+    
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
@@ -28,7 +33,7 @@ export default class Signup extends Component {
 
     onChangeEmail(e) {
         this.setState({
-            email: e.target.value
+           email: e.target.value
         })
     }
 
@@ -36,16 +41,15 @@ export default class Signup extends Component {
         this.setState({
             password: e.target.value
         })
-    }
+   }
 
-    Login() {
-
-    }
+    //Login() {
+    //}
 
     onSubmit(e) {
         e.preventDefault();
 
-        const user = {
+       const user = {
             username: this.state.username
         }
 
@@ -62,15 +66,15 @@ export default class Signup extends Component {
         axios.post('http://localhost:3000/user/add', user)
             .then(res => console.log(res.data));
 
-        this.setState({
+       this.setState({
             username: '',
             email: '',
             password: ''
         })
     }
-
     render() {
         return (
+
             <div className='container h-auto bg-blue-200'>
                 <h3 className='flex justify-center items-center text-lg font-bold tracking-wide text-center shadow-lg h-16 font-josefin-sans bg-fuchsia-100'>Let's Get Started!</h3>
                 <form className='align-middle flex flex-col  justify-center items-center' onSubmit={this.onSubmit}>
@@ -117,6 +121,7 @@ export default class Signup extends Component {
 
                 </form>
             </div>
+    
         )
     }
 }
