@@ -18,3 +18,5 @@ router
   .get(getResistanceById)
   .delete(deleteCardio)
   .delete(deleteResistance);
+
+module.exports = router;
