@@ -8,15 +8,12 @@ const {
   deleteResistance,
 } = require("../../controllers/history");
 
-// /api/history
-router.route("/").get(getAllCardio).get(getAllResistance);
+// /api/history/cardio
+router.route("/cardio").get(getAllCardio);
+router.route("/cardio/:id").get(getCardioById).delete(deleteCardio);
 
-// /api/history/:id
-router
-  .route("/:id")
-  .get(getCardioById)
-  .get(getResistanceById)
-  .delete(deleteCardio)
-  .delete(deleteResistance);
+// /api/history/resistance
+router.route("/resistance").get(getAllResistance);
+router.route("/resistance/:id").get(getResistanceById).delete(deleteResistance);
 
 module.exports = router;

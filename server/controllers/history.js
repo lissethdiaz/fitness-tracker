@@ -42,7 +42,7 @@ const historyController = {
 
   // get one Resistance by id
   getResistanceById({ params }, res) {
-    Cardio.findOne({ _id: params.id })
+    Resistance.findOne({ _id: params.id })
       .then((dbResistanceData) => res.json(dbResistanceData))
       .catch((err) => {
         console.log(err);

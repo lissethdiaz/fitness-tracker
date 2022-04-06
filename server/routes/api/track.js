@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { createCardio, createResistance } = require("../../controllers/track");
 
-// /api/history
-router.route("/cardio").put(createCardio);
-router.route("/resistance").put(createResistance);
+// /api/track
+router.route("/cardio").post(createCardio);
+router.route("/resistance").post(createResistance);
 
 module.exports = router;
