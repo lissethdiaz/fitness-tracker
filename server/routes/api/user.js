@@ -9,6 +9,7 @@ router.route("/").post(createUser).put(authMiddleware);
 
 router.route("/login").post(login);
 
-router.route("/me").get(authMiddleware, getSingleUser);
+// needs to login to add new exercise
+router.route("/track").get(authMiddleware, getSingleUser);
 
 module.exports = router;
