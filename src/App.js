@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
+import NavTabs from './components/NavTabs'
+import Goals from './pages/Goals'
+import Home from './pages/Home'
+import History from './pages/History'
+import Track from './components/Track'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import Footer from './components/Footer'
+import Header from './components/Header';
+import './index.css';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Router>
+        <div className='container'>
+        <Header/>
+        <NavTabs/>
+        <Routes>
+          <Route path="/"element={<Signup/>} />
+          <Route path ="/login" element = {<Login/>}/>
+          <Route path ="/track" element = {<Track/>}/>
+          <Route path ="/history" element = {<History/>}/>
+          <Route path ="/goals" element = {<Goals/>}/>
+        </Routes>
+       
+              {/* <Signup/> */}
+
+      <Footer/>
+    
+  </div>
+</Router>
+);
 }
 
 export default App;
