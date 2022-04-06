@@ -1,14 +1,14 @@
-import React from "react";
-import exerciseItem from "Track.js";
-import workoutItem from "Track.js";
+import React, {useState} from "react";
+import exerciseItem from '../components/Track.js';
+import workoutItem from '../components/Track.js';
 
-{/*Seperates the array into a list*/}
-const exerciseList = exerciseItem.map((exerciseItem) =>
+//Seperates the array into a list
+const exerciseList = exerciseItem.map((exerciseItem, index) =>
 <li key={index}>
 {exerciseItem.button}
 </li>
 );
-const workoutList = workoutItem.map((workoutItem) =>
+const workoutList = workoutItem.map((workoutItem, index) =>
 <li key={index}>
 {workoutItem.text}
 </li>
@@ -26,7 +26,7 @@ export const Modal = () => {
   return (
     <>
       {/*Gives a list of buttons, each for a specific exercise, to choose from*/}
-      <button className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" onClick={() => setShowRModal(true)}>
+      <button className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" onClick={() => setShowModal(true)}>
         {exerciseList}
       </button>
       {showModal ? (
@@ -56,4 +56,4 @@ export const Modal = () => {
   );
 };
 
-export const history = History;
+export default History;

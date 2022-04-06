@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import exerciseItem from "Track.js";
+import exerciseItem from './Track.js';
 
-{/*Seperates the array into a list*/}
-const exerciseList = exerciseItem.map((exerciseItem) =>
+//Seperates the array into a list
+const exerciseList = exerciseItem.map((exerciseItem, index) =>
 <li key={index}>
   <option value={exerciseItem}>{exerciseItem}</option>
 </li>
