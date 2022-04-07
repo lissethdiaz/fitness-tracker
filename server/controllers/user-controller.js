@@ -1,4 +1,4 @@
-const { User, Cardio, Resistance } = require("../models");
+const { User, Cardio, Resistance, Goals } = require("../models");
 const { signToken } = require("../utils/auth");
 
 module.exports = {
@@ -56,13 +56,6 @@ module.exports = {
       .catch((err) => res.json(err));
   },
 
-  // create Resistance
-  createResistance({ body }, res) {
-    Resistance.create(body)
-      .then((dbResistanceData) => res.json(dbResistanceData))
-      .catch((err) => res.json(err));
-  },
-
   // get all Cardios
   getAllCardio(req, res) {
     Cardio.find({})
@@ -83,6 +76,12 @@ module.exports = {
         res.sendStatus(400);
       });
   },
+  // create Resistance
+  createResistance({ body }, res) {
+    Resistance.create(body)
+      .then((dbResistanceData) => res.json(dbResistanceData))
+      .catch((err) => res.json(err));
+  },
 
   // get all Resistance
   getAllResistance(req, res) {
@@ -99,6 +98,24 @@ module.exports = {
   getResistanceById({ params }, res) {
     Resistance.findOne({ _id: params.id })
       .then((dbResistanceData) => res.json(dbResistanceData))
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(400);
+      });
+  },
+
+  // create goal
+  createGoals({ body }, res) {
+    Goals.create(body)
+      .then((dbGoalData) => res.json(dbGoalData))
+      .catch((err) => res.json(err));
+  },
+
+  // get all Goal
+  getAllGoals(req, res) {
+    Goals.find({})
+      .sort({ createdAt: "desc" })
+      .then((dbGoalData) => res.json(dbGoalData))
       .catch((err) => {
         console.log(err);
         res.sendStatus(400);
