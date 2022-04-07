@@ -18,11 +18,11 @@ function App() {
         <Header />
         <NavTabs />
         <Routes>
-          <Route path="/" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/users" element={<Signup />} />
+          <Route path="/users/login" element={<Login />} />
           <Route path="/track" element={<Track />} />
           <Route path="/history" element={<History />} />
-          <Route path="/goals" element={<Goals />} />
+          <Route path="/users/goals" element={<Goals />} />
         </Routes>
 
         {/* <Signup/> */}
