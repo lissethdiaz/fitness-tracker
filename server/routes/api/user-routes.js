@@ -9,6 +9,8 @@ const {
   getCardioById,
   getAllResistance,
   getResistanceById,
+  createGoals,
+  getAllGoals,
 } = require("../../controllers/user-controller");
 
 // import middleware
@@ -31,5 +33,8 @@ router.route("/cardio/:id").get(getCardioById);
 // api/users/resistance
 router.route("/resistance").post(createResistance).get(getAllResistance);
 router.route("/resistance/:id").get(getResistanceById);
+
+// api/users/goal
+router.route("/goal").post(createGoals).get(getAllGoals);
 
 module.exports = router;
