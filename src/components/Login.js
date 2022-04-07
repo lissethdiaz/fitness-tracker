@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import{Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [formData, setFormData] = useState({
     user: {
       username: "",
-      password: ""
+      password: "",
     },
   });
 
@@ -22,7 +22,9 @@ export default function Login() {
     <figure className="h-auto flex bg-gray-100">
       <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primary Border shadow-default py-10 px-1">
         <blockquote className="text-2xl font-medium text-center">
-          <p className="text-lg font-semibold font-josefin-sans">Welcome to Fit don't Quit</p>
+          <p className="text-lg font-semibold font-josefin-sans">
+            Welcome to Fit don't Quit
+          </p>
         </blockquote>
 
         <div className="text-primary m-6 font-josefin-sans">
@@ -39,9 +41,7 @@ export default function Login() {
               value={formData.user.username}
               onChange={handleChange}
               placeholder="Username"
-              className=
-                "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
-              
+              className="w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
             />
             <label>Password:</label>
             <input
@@ -50,9 +50,7 @@ export default function Login() {
               value={formData.user.password}
               onChange={handleChange}
               placeholder="Password"
-              className=
-                "w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
-              
+              className="w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4"
             />
             <div className="flex items-center mt-3 justify-center">
               <button
@@ -64,12 +62,13 @@ export default function Login() {
             </div>
           </form>
           <div className="flex items-center mt-3 justify-center">
-            <Link to='/'><button className="justify-center text-blue-500 hover:underline">
-              Want an account? Sign up for free!
-            </button></Link>
+            <Link to="/">
+              <button className="justify-center text-blue-500 hover:underline">
+                Want an account? Sign up for free!
+              </button>
+            </Link>
           </div>
         </div>
-
       </div>
     </figure>
   );

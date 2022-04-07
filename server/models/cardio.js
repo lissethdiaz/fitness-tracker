@@ -1,21 +1,24 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const goalSchema = new Schema(
+const cardioSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    description: {
-      type: String,
+    distance: {
+      type: Number,
       required: true,
-      max: 120,
+    },
+    time: {
+      type: Number,
+      required: true,
     },
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
+      get: (createdAtVal) => dateFormat(createdAtVal),
     },
   },
   {
@@ -25,6 +28,6 @@ const goalSchema = new Schema(
   }
 );
 
-const Goal = model("Goal", goalSchema);
+const Cardio = model("Cardio", cardioSchema);
 
-module.exports = Goal;
+module.exports = Cardio;
