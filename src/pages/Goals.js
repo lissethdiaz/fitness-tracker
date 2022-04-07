@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createGoals, getAllGoals } from "../utils/API";
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);

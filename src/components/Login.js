@@ -1,6 +1,8 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import { loginUser } from "../utils/API";
+import Auth from "../utils/auth";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -19,6 +21,39 @@ export default function Login() {
     });
   };
 
+  const [validated] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    try {
+      const response = await loginUser(formData);
+
+      if (!response.ok) {
+        throw new Error("something went wrong!");
+      }
+
+      const { token, user } = await response.json();
+      console.log(user);
+      Auth.login(token);
+    } catch (err) {
+      console.error(err);
+    }
+
+    setFormData({
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
+
   return (
     <figure className="h-auto flex bg-gray-100">
       <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primary Border shadow-default py-10 px-1">
@@ -34,7 +69,7 @@ export default function Login() {
               Login to your account
             </h1>
           </div>
-          <form>
+          <form noValidate validated={validated} onSubmit={handleFormSubmit}>
             <label className="text-left">Username:</label>
             <input
               name="username"
@@ -74,4 +109,3 @@ export default function Login() {
     </figure>
   );
 }
-
