@@ -27,14 +27,23 @@ router.route("/login").post(login);
 router.route("/me").get(authMiddleware, getSingleUser);
 
 // api/users/cardio
-router.route("/cardio").post(createCardio).get(getAllCardio);
-router.route("/cardio/:id").get(getCardioById);
+router
+  .route("/cardio")
+  .post(authMiddleware, createCardio)
+  .get(authMiddleware, getAllCardio);
+router.route("/cardio/:id").get(authMiddleware, getCardioById);
 
 // api/users/resistance
-router.route("/resistance").post(createResistance).get(getAllResistance);
+router
+  .route("/resistance")
+  .post(authMiddleware, createResistance)
+  .get(authMiddleware, getAllResistance);
 router.route("/resistance/:id").get(getResistanceById);
 
 // api/users/goal
-router.route("/goal").post(createGoals).get(getAllGoals);
+router
+  .route("/goal")
+  .post(authMiddleware, createGoals)
+  .get(authMiddleware, getAllGoals);
 
 module.exports = router;

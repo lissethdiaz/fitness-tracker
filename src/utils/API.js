@@ -52,7 +52,7 @@ export const createResistance = (resistanceData, token) => {
   });
 };
 
-// create resistance
+// create goal
 export const createGoals = (goalData, token) => {
   return fetch("/api/users/goal", {
     method: "POST",
