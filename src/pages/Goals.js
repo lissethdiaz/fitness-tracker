@@ -1,19 +1,20 @@
 import React, { useState } from "react";
+import { createGoals, getAllGoals } from "../utils/API";
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-    <div className="h-screen flex justify-center items-center bg-slate-200">
-      <button
-        className="bg-blue-200 text-black active:bg-blue-500 
+      <div className="h-screen flex justify-center items-center bg-slate-200">
+        <button
+          className="bg-blue-200 text-black active:bg-blue-500 
       font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Set a Goal!
-      </button>
-    </div>
+          type="button"
+          onClick={() => setShowModal(true)}
+        >
+          Set a Goal!
+        </button>
+      </div>
       {showModal ? (
         <>
           <div className="flex  justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -35,7 +36,10 @@ const Modal = () => {
                     <label className="block text-black text-sm font-bold mb-1">
                       Date to reach your goal by
                     </label>
-                    <input type='date' className="shadow appearance-none border rounded w-full py-2 px-1 text-black" />
+                    <input
+                      type="date"
+                      className="shadow appearance-none border rounded w-full py-2 px-1 text-black"
+                    />
                     <label className="block text-black text-sm font-bold mb-1">
                       Describe your goal
                     </label>

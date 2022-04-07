@@ -29,91 +29,91 @@ export const loginUser = (userData) => {
 };
 
 // create cardio
-export const createCardio = (cardioData, token) => {
+export const createCardio = (cardioData) => {
   return fetch("/api/users/cardio", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(cardioData),
   });
 };
 
 // create resistance
-export const createResistance = (resistanceData, token) => {
+export const createResistance = (resistanceData) => {
   return fetch("/api/users/resistance", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(resistanceData),
   });
 };
 
 // create goal
-export const createGoals = (goalData, token) => {
+export const createGoals = (goalData) => {
   return fetch("/api/users/goal", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(goalData),
   });
 };
 
 //cardio history
-export const getAllCardio = (cardioData, token) => {
+export const getAllCardio = (cardioData) => {
   return fetch("/api/users/cardio", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(cardioData),
   });
 };
 
 //resistance history
-export const getAllResistance = (resistanceData, token) => {
+export const getAllResistance = (resistanceData) => {
   return fetch("/api/users/resistance", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(resistanceData),
   });
 };
 
 //goal history
-export const getAllGoals = (goalData, token) => {
+export const getAllGoals = (goalData) => {
   return fetch("/api/users/goal", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(goalData),
   });
 };
 
-export const getCardioById = (cardioId, token) => {
+export const getCardioById = (cardioId) => {
   return fetch(`/api/users/cardio/${cardioId}`, {
     method: "GET",
     headers: {
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
   });
 };
 
-export const getResistanceById = (resistanceId, token) => {
+export const getResistanceById = (resistanceId) => {
   return fetch(`/api/users/resistance/${resistanceId}`, {
     method: "GET",
     headers: {
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
   });
 };
