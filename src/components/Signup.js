@@ -71,38 +71,38 @@ export default class Signup extends Component {
 
     render() {
         return (
-            <div className='container bg-blue-200'>
+            <div className='container h-auto bg-blue-200'>
                 <h3 className='flex justify-center items-center text-lg font-bold tracking-wide text-center shadow-lg h-16 font-josefin-sans bg-fuchsia-100'>Let's Get Started!</h3>
-                <form className='flex flex-col justify-center items-center' onSubmit={this.onSubmit}>
+                <form className='align-middle flex flex-col  justify-center items-center' onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label className='font-bold'>enter a username: </label>
+                        <label className='font-bold'>Username: </label>
                         <input type="text"
                             required
                             className="form-control rounded border-double flex justify-center items-center"
                             value={this.state.username}
-                            placeholder="Username"
+                            placeholder="enter a username"
                             onChange={this.onChangeUsername}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label className='font-bold'>enter your email address: </label>
+                        <label className='font-bold'>Email Address: </label>
                         <input type="email"
                             required
                             className="form-control rounded border-double flex justify-center items-center"
                             value={this.state.email}
-                            placeholder="Email"
+                            placeholder="enter your email address"
                             onChange={this.onChangeEmail}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label className='font-bold'>enter a unique password: </label>
+                        <label className='font-bold'>Password: </label>
                         <input type="text"
                             required
                             className="form-control rounded border-double flex justify-center items-center"
                             value={this.state.password}
-                            placeholder="Password"
+                            placeholder="enter a unique password"
                             onChange={this.onChangePassword}
                         />
                     </div>
