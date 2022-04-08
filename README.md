@@ -5,7 +5,7 @@
   This application allows you to track your cardio and resistance workouts. 
 
   ## Deployed Link
-
+https://getfitdontquit.herokuapp.com/
   ![](src/NEEDSSCREENSHOT)
 
   ## Technologies Used
